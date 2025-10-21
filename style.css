@@ -1,0 +1,98 @@
+/* Fondo general y tipografía */
+body {
+    background: linear-gradient(to bottom right, #f8e8ff, #dbe3ff);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    background-color: #6a0dad;
+    color: white;
+    padding: 30px 10px;
+    border-bottom: 5px solid #b19cd9;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2em;
+}
+
+header p {
+    margin-top: 8px;
+    font-size: 1.1em;
+}
+
+/* Contenedor de los signos */
+.contenedor-signos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 30px;
+}
+
+/* Tarjetas de cada signo */
+.signo {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 230px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signo:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Imagen del signo */
+.signo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Nombre y texto */
+.signo h2 {
+    color: #6a0dad;
+    margin: 10px 0;
+}
+
+.signo p {
+    font-size: 0.95em;
+    color: #444;
+}
+
+/* Enlaces */
+.signo a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #6a0dad;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signo a:hover {
+    text-decoration: underline;
+}
+
+/* Pie de página */
+footer {
+    background-color: #6a0dad;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+    border-top: 5px solid #b19cd9;
+}
+footer a {
+    color: #ffe6ff;
+    text-decoration: none;
+}
+
