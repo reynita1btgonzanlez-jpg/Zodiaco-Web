@@ -1,98 +1,144 @@
-/* Fondo general y tipografía */
+/* Fondo cósmico y tipografía elegante */
 body {
-    background: linear-gradient(to bottom right, #f8e8ff, #dbe3ff);
+    background: radial-gradient(circle at top, #1a0033, #0d001a, #000);
+    color: #f0dfff;
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
-/* Encabezado */
-header {
+/* Encabezado principal */
+h1 {
     text-align: center;
-    background-color: #6a0dad;
-    color: white;
-    padding: 30px 10px;
-    border-bottom: 5px solid #b19cd9;
+    font-size: 3em;
+    letter-spacing: 3px;
+    color: #ffccff;
+    text-shadow: 0 0 10px #ff69b4, 0 0 25px #9932cc, 0 0 40px #ff00ff;
+    background: linear-gradient(to right, #44006b, #8a2be2, #c71585);
+    padding: 25px;
+    border-bottom: 3px solid #ffb3ff;
+    animation: glow 3s infinite alternate;
+    font-style: italic; /* Título principal en cursiva */
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.2em;
+/* Efecto de brillo animado */
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #ff00ff, 0 0 20px #9932cc, 0 0 30px #ff69b4; }
+    100% { text-shadow: 0 0 20px #ffb6ff, 0 0 40px #9400d3, 0 0 60px #ff1493; }
 }
 
-header p {
-    margin-top: 8px;
-    font-size: 1.1em;
+/* Lista principal */
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 50px auto;
+    max-width: 1000px;
 }
 
-/* Contenedor de los signos */
-.contenedor-signos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    padding: 30px;
-}
-
-/* Tarjetas de cada signo */
-.signo {
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    width: 230px;
-    padding: 20px;
+/* Nombre de los signos */
+li {
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 2em;
+    color: #ffb6ff;
+    font-weight: bold; /* títulos en negrita */
+    font-style: italic; /* títulos en cursiva */
+    margin-top: 40px;
+    text-shadow: 0 0 10px #ff00ff, 0 0 25px #9400d3;
+    animation: float 4s ease-in-out infinite alternate;
 }
 
-.signo:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+/* Animación flotante suave */
+@keyframes float {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-8px); }
 }
 
-/* Imagen del signo */
-.signo img {
-    width: 100px;
-    height: 100px;
+/* Descripción de cada signo */
+p {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 182, 255, 0.3);
+    border-radius: 20px;
+    padding: 20px 30px;
+    margin: 15px auto;
+    width: 80%;
+    font-size: 1.05em;
+    line-height: 1.7;
+    color: #f0e6ff;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+    backdrop-filter: blur(5px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    font-style: italic; /* Texto en cursiva */
+}
+
+/* Efecto al pasar el mouse sobre la descripción */
+p:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 20, 147, 0.8);
+}
+
+/* Imágenes de los signos */
+img {
+    display: block;
+    margin: 20px auto 40px auto;
     border-radius: 50%;
-    object-fit: cover;
+    width: 220px;
+    height: 220px;
+    border: 4px solid #ff66ff;
+    box-shadow: 0 0 25px #ff00ff, 0 0 40px #800080;
+    transition: transform 0.5s ease, filter 0.5s ease, box-shadow 0.5s ease;
 }
 
-/* Nombre y texto */
-.signo h2 {
-    color: #6a0dad;
-    margin: 10px 0;
+/* Imagen con efecto neón */
+img:hover {
+    transform: scale(1.15) rotate(3deg);
+    filter: brightness(1.3);
+    box-shadow: 0 0 40px #ff33ff, 0 0 80px #ff66ff;
 }
 
-.signo p {
-    font-size: 0.95em;
-    color: #444;
+/* Divisor entre signos (línea brillante) */
+li::after {
+    content: "";
+    display: block;
+    width: 70%;
+    margin: 40px auto;
+    border-bottom: 2px dashed rgba(255, 182, 255, 0.5);
+    box-shadow: 0 0 10px #ff00ff;
 }
 
-/* Enlaces */
-.signo a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #6a0dad;
-    text-decoration: none;
-    font-weight: bold;
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
 }
 
-.signo a:hover {
-    text-decoration: underline;
+/* Animación sutil al aparecer */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Pie de página */
-footer {
-    background-color: #6a0dad;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 0.9em;
-    border-top: 5px solid #b19cd9;
+li, p, img {
+    animation: fadeIn 1.5s ease forwards;
 }
 
+/* Responsivo (celular y tablet) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+        padding: 20px;
+    }
 
+    li {
+        font-size: 1.5em;
+    }
 
+    p {
+        width: 90%;
+        font-size: 0.95em;
+    }
 
-
+    img {
+        width: 160px;
+        height: 160px;
+    }
+}
